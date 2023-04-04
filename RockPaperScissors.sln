@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissors", "RockPa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameTest", "GameTest\GameTest.csproj", "{12725451-F937-4702-A61C-CEE7E3361FD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockPaperScissorsTests", "RockPaperScissorsTests\RockPaperScissorsTests.csproj", "{6ADC706A-2AF0-42E2-B3B2-3EA2AF422264}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RockPaperScissorsTests", "RockPaperScissorsTests\RockPaperScissorsTests.csproj", "{6ADC706A-2AF0-42E2-B3B2-3EA2AF422264}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithm", "Algorithm\Algorithm.csproj", "{03940C1D-D0FE-4F6C-B2EC-F3839FD22633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6ADC706A-2AF0-42E2-B3B2-3EA2AF422264}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ADC706A-2AF0-42E2-B3B2-3EA2AF422264}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ADC706A-2AF0-42E2-B3B2-3EA2AF422264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03940C1D-D0FE-4F6C-B2EC-F3839FD22633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03940C1D-D0FE-4F6C-B2EC-F3839FD22633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03940C1D-D0FE-4F6C-B2EC-F3839FD22633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03940C1D-D0FE-4F6C-B2EC-F3839FD22633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
