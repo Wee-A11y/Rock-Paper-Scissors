@@ -2,7 +2,7 @@
 
 public enum Winner
 {
-    Choice1,
-    Choice2,
+    Player1Choice,
+    Player2Choice,
     Draw
 }

@@ -2,7 +2,6 @@
 
 public class DisplayWinner : IDisplayWinner
 {
-    //Formats string for if a player wins or if there is a draw
     public const string PlayerWon = "{0} won";
     public const string NoWinner = "It's a draw! No winner";
 
@@ -10,9 +9,9 @@ public class DisplayWinner : IDisplayWinner
     {
         switch (winner)
         {
-            case Winner.Choice1:
+            case Winner.Player1Choice:
                 return string.Format(PlayerWon, player1.Name);
-            case Winner.Choice2:
+            case Winner.Player2Choice:
                 return string.Format(PlayerWon, player2.Name);
             case Winner.Draw:
             default:

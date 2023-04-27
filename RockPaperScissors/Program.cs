@@ -1,16 +1,24 @@
-﻿namespace RockPaperScissors
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace RockPaperScissors
 {
     internal class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
-            var player1 = new Player("Allison", new PersonChoiceFactory(new ChoiceParser()));
-            var player2 = new Player("Computer", new ComputerChoiceFactory());
+            IServiceCollection serviceCollection = new ServiceCollection();
 
-            var game = new Game(new Algorithm(), new DisplayWinner(), new MessageWriter(), new Score());
+            serviceCollection
+                .AddGameServices()
+                .AddIOServices();
+
+            using var serviceProvider = serviceCollection.BuildServiceProvider();
+            var player1 = new Player("Allison", 0,new PersonChoiceFactory(new ChoiceParser(), new UiFacade()));
+            var player2 = new Player("Computer", 0,new ComputerChoiceFactory());
+
+            var game = serviceProvider.GetRequiredService<IGame>();
             game.Play(player1, player2);
         }
-        
     }
 }
 

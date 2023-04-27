@@ -2,9 +2,7 @@
 
 public class ComputerChoiceFactory : IChoiceFactory
 {
-    private readonly ChoiceDictProvider _choiceDict = new ChoiceDictProvider();
-    //private Random _random = new Random();
-
+    private readonly ChoiceDictProvider _choiceDict = new();
     public ChoiceEnum Choose()
     {
         var random = new Random();

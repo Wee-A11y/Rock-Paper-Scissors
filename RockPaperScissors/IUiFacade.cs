@@ -1,6 +1,7 @@
 ﻿namespace RockPaperScissors;
 
-public interface IMessageWriter
+public interface IUiFacade
 {
     void WriteMessage(string message);
+    string ReadLine();
 }

@@ -14,20 +14,20 @@ namespace GameTest.Tests
                 new object[] { ChoiceEnum.Rock, ChoiceEnum.Rock, Winner.Draw },
                 new object[] { ChoiceEnum.Scissors, ChoiceEnum.Scissors, Winner.Draw },
 
-                new object[] { ChoiceEnum.Rock, ChoiceEnum.Paper, Winner.Choice2 },
-                new object[] { ChoiceEnum.Scissors, ChoiceEnum.Rock, Winner.Choice2 },
-                new object[] { ChoiceEnum.Paper, ChoiceEnum.Scissors, Winner.Choice2 },
-
-                new object[] { ChoiceEnum.Paper, ChoiceEnum.Rock, Winner.Choice1 },
-                new object[] { ChoiceEnum.Rock, ChoiceEnum.Scissors, Winner.Choice1 },
-                new object[] { ChoiceEnum.Scissors, ChoiceEnum.Paper, Winner.Choice1 },
+                new object[] { ChoiceEnum.Rock, ChoiceEnum.Paper, Winner.Player2Choice },
+                new object[] { ChoiceEnum.Scissors, ChoiceEnum.Rock, Winner.Player2Choice },
+                new object[] { ChoiceEnum.Paper, ChoiceEnum.Scissors, Winner.Player2Choice },
+                
+                new object[] { ChoiceEnum.Paper, ChoiceEnum.Rock, Winner.Player1Choice },
+                new object[] { ChoiceEnum.Rock, ChoiceEnum.Scissors, Winner.Player1Choice },
+                new object[] { ChoiceEnum.Scissors, ChoiceEnum.Paper, Winner.Player1Choice },
             };
 
         [Theory]
         [AutoMemberNSubstituteData(nameof(Data))]
-        public void WHEN_Game_is_run_THEN_Decide_Winner(ChoiceEnum choice1, ChoiceEnum choice2, Winner expectedWinner, Algorithm sut)
+        public void WHEN_Game_is_run_THEN_Decide_Winner(ChoiceEnum Player1Choice, ChoiceEnum choice2, Winner expectedWinner, Algorithm sut)
         {
-            sut.Run(choice1, choice2).Should().Be(expectedWinner);
+            sut.Run(Player1Choice, choice2).Should().Be(expectedWinner);
         }
     }
 }

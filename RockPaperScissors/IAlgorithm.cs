@@ -2,5 +2,5 @@
 
 public interface IAlgorithm
 {
-    Winner Run(ChoiceEnum choice1, ChoiceEnum choice2);
+    Winner Run(ChoiceEnum player1Choice, ChoiceEnum player2Choice);
 }

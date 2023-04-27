@@ -2,5 +2,6 @@
 
 public interface IChoiceParser
 {
-    int TryParseInput(string input);
+    bool TryParseInput(string input);
+    int ParseInput(string input);
 }

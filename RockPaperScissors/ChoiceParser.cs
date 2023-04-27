@@ -1,15 +1,31 @@
-﻿namespace RockPaperScissors
+﻿using System.Linq;
+using System.Xml;
+
+namespace RockPaperScissors
 {
     public class ChoiceParser : IChoiceParser
     {
-        public int TryParseInput(string input)
+        private readonly List<int> _validValues = new() { 1, 2, 3 };
+
+        public bool TryParseInput(string input)
         {
-            if (!int.TryParse(input, out var choice))
+            var valid = int.TryParse(input, out var value);
+            if (!valid)
             {
-                throw new IOException("Please keep selections between '1', '2', and '3'.");
+                return valid;
             }
 
-            return choice;
+            if (value == 4)
+            {
+                Environment.Exit(0);
+            }
+
+            return _validValues.Any(x => x == value);
+        }
+
+        public int ParseInput(string input)
+        {
+            return int.Parse(input);
         }
     }
 }

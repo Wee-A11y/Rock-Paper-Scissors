@@ -1,13 +1,20 @@
 ﻿namespace RockPaperScissors;
 
-public class PlayAgain
+public class PlayAgain : IPlayAgain
 {
-    public static bool Prompt(IMessageWriter messageWriter)
+    private readonly IUiFacade _uiFacade;
+
+    public PlayAgain(IUiFacade uiFacade)
     {
-        messageWriter.WriteMessage("Play again (y/n): ");
+        _uiFacade = uiFacade;
+    }
+
+    public bool Prompt()
+    {
+        _uiFacade.WriteMessage("Play again (y/n): ");
         var check = Console.ReadKey();
-        messageWriter.WriteMessage("");
-        messageWriter.WriteMessage("");
+        _uiFacade.WriteMessage("");
+        _uiFacade.WriteMessage("");
         var keepPlaying = check.Key.ToString().ToLower() == "y";
         return keepPlaying;
     }

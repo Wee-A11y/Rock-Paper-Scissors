@@ -1,17 +1,16 @@
 ﻿namespace RockPaperScissors
 {
-    public class CalculateScore
+    public class CalculateScore : ICalculateScore
     {
-        private readonly Score _score = new Score();
 
-        public int AddScore(Winner winner)
+        public int AddScore(Winner winner, Player player1, Player player2)
         {
             switch (winner)
             {
-                case Winner.Choice1:
-                    return ++_score.Player1Score;
-                case Winner.Choice2: 
-                    return ++_score.Player2Score;
+                case Winner.Player1Choice:
+                    return ++player1.Score;
+                case Winner.Player2Choice: 
+                    return ++player2.Score;
                 case Winner.Draw:
                     break;
                 default:
@@ -21,9 +20,5 @@
             return 0;
         }
 
-        public Score GetScore()
-        {
-            return _score;
-        }
     }
 }
